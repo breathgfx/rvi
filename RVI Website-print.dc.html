@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<template id="__bundler_thumbnail" data-bg-color="#16232B">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" fill="#16232B"/>
+<rect x="420" y="330" width="130" height="130" fill="#C8102E"/>
+<text x="485" y="410" font-family="Georgia,serif" font-size="46" fill="#fff" text-anchor="middle">RVI</text>
+</svg>
+</template>
+<meta name="omelette-print-source" content="v1787208186390642 RVI Website.dc.html">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<script src="./doc-page.js"></script>
+<style>doc-page:not(:defined){visibility:hidden}
+* { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+* { animation-delay: -99s !important; animation-duration: .001s !important; animation-iteration-count: 1 !important; animation-fill-mode: both !important; animation-play-state: running !important; transition-duration: 0s !important; }
+.pf-note{font-family:"Be Vietnam Pro",system-ui,sans-serif;font-size:13px;line-height:1.6;color:#4A5158;max-width:78ch;margin:8px 0 28px}
+.pf-h1{font-family:"Zilla Slab",Georgia,serif;font-size:26px;color:#16232B;margin:0 0 4px}
+.pf-block{break-before:page}
+.pf-block:first-of-type{break-before:auto}
+.pf-title{font-family:"Be Vietnam Pro",system-ui,sans-serif;font-size:13px;font-weight:600;color:#16232B;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid #16232B;display:flex;align-items:baseline;gap:8px}
+.pf-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#16232B;color:#fff;border-radius:2px}
+.pf-wrap{position:relative}
+.pf-inner{transform-origin:top left}
+</style>
+</helmet>
+<doc-page margin="0.5in">
+  <h1 class="pf-h1">RVI Centre — template family, desktop + mobile</h1>
+  <p class="pf-note">Three templates on one shared component set: a unique Home, the shared section-landing (Publications), and the shared detail template (Publication detail). Palette: deep charcoal-navy fields, RVI red for actions and key figures, warm off-white body ground. Headings in Zilla Slab, body in Be Vietnam Pro. Photography and partner logos are marked placeholders. Each option below is scaled to page width; page breaks separate options.</p>
+
+  <div class="pf-block">
+    <p class="pf-title"><span class="pf-tid">1a</span>Home — desktop 1280</p>
+    <div class="pf-wrap" ref="{{ setWrap1a }}"><div class="pf-inner" ref="{{ setInner1a }}" style="width:1280px"><dc-import name="Home" hint-size="1280px,3200px"></dc-import></div></div>
+  </div>
+  <div class="pf-block">
+    <p class="pf-title"><span class="pf-tid">1b</span>Home — mobile 390</p>
+    <div class="pf-wrap" ref="{{ setWrap1b }}"><div class="pf-inner" ref="{{ setInner1b }}" style="width:390px"><dc-import name="Home" hint-size="390px,4200px"></dc-import></div></div>
+  </div>
+  <div class="pf-block">
+    <p class="pf-title"><span class="pf-tid">1c</span>Publications (section landing) — desktop 1280</p>
+    <div class="pf-wrap" ref="{{ setWrap1c }}"><div class="pf-inner" ref="{{ setInner1c }}" style="width:1280px"><dc-import name="Publications" hint-size="1280px,3000px"></dc-import></div></div>
+  </div>
+  <div class="pf-block">
+    <p class="pf-title"><span class="pf-tid">1d</span>Publications — mobile 390</p>
+    <div class="pf-wrap" ref="{{ setWrap1d }}"><div class="pf-inner" ref="{{ setInner1d }}" style="width:390px"><dc-import name="Publications" hint-size="390px,4000px"></dc-import></div></div>
+  </div>
+  <div class="pf-block">
+    <p class="pf-title"><span class="pf-tid">1e</span>Publication detail — desktop 1280</p>
+    <div class="pf-wrap" ref="{{ setWrap1e }}"><div class="pf-inner" ref="{{ setInner1e }}" style="width:1280px"><dc-import name="Publication Detail" hint-size="1280px,3200px"></dc-import></div></div>
+  </div>
+  <div class="pf-block">
+    <p class="pf-title"><span class="pf-tid">1f</span>Publication detail — mobile 390</p>
+    <div class="pf-wrap" ref="{{ setWrap1f }}"><div class="pf-inner" ref="{{ setInner1f }}" style="width:390px"><dc-import name="Publication Detail" hint-size="390px,4400px"></dc-import></div></div>
+  </div>
+</doc-page>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const PAGES = [
+  { id:"1a", width:1280, targetWidth:680 },
+  { id:"1b", width:390, targetWidth:300 },
+  { id:"1c", width:1280, targetWidth:680 },
+  { id:"1d", width:390, targetWidth:300 },
+  { id:"1e", width:1280, targetWidth:680 },
+  { id:"1f", width:390, targetWidth:300 }
+];
+class Component extends DCLogic {
+  wraps = {};
+  inners = {};
+  componentDidMount(){
+    setTimeout(() => this.fit(), 1000);
+    setTimeout(() => this.fit(), 2200);
+  }
+  fit(){
+    PAGES.forEach(p => {
+      const inner = this.inners[p.id];
+      const wrap = this.wraps[p.id];
+      if(!inner || !wrap) return;
+      const naturalH = inner.scrollHeight || inner.getBoundingClientRect().height;
+      const scale = p.targetWidth / p.width;
+      inner.style.transform = "scale(" + scale + ")";
+      wrap.style.width = p.targetWidth + "px";
+      wrap.style.height = Math.round(naturalH * scale) + "px";
+    });
+  }
+  renderVals(){
+    const vals = {};
+    PAGES.forEach(p => {
+      vals["setWrap" + p.id] = (el) => { this.wraps[p.id] = el; };
+      vals["setInner" + p.id] = (el) => { this.inners[p.id] = el; };
+    });
+    return vals;
+  }
+}
+</script>
+</body>
+</html>
