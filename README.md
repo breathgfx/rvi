@@ -1,6 +1,6 @@
 # RVI Centre — Website Design
 
-**Live preview: [breathgfx.github.io/rvi](https://breathgfx.github.io/rvi/)**
+**Live preview: [breathgfx.github.io/rvi](https://breathgfx.github.io/rvi/)** (lands on Home; see the [full page overview](https://breathgfx.github.io/rvi/overview.html) for every template)
 
 A template-family website design for the RVI Centre, built as a [Claude Design](https://claude.ai) canvas: a shared component set (nav, cards, tags, footer) applied across a unique Home page and a shared section-landing / detail template pair, in desktop and mobile.
 
