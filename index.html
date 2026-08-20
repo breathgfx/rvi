@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RVI Centre — Website Design</title>
+<link rel="stylesheet" href="_ds/modernist-afa70314-ff96-4da1-bdc0-0ca18583e92d/styles.css">
+<style>
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); }
+  .wrap { max-width: 920px; margin: 0 auto; padding: var(--space-8) var(--space-6) 96px; }
+  header { border-bottom: 2px solid var(--color-divider); padding-bottom: var(--space-6); margin-bottom: var(--space-8); }
+  .kicker { font: 600 12px/1.4 var(--font-body); letter-spacing: .04em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 var(--space-2); }
+  h1 { font: var(--font-heading-weight) clamp(28px, 5vw, 44px)/1.1 var(--font-heading); margin: 0 0 var(--space-3); }
+  p.lede { font: 400 16px/1.6 var(--font-body); color: var(--color-neutral-800); max-width: 62ch; margin: 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 2px; background: var(--color-divider); border: 2px solid var(--color-divider); }
+  a.card { display: block; background: var(--color-bg); padding: var(--space-6); text-decoration: none; color: var(--color-text); }
+  a.card:hover { background: var(--color-surface); }
+  a.card:focus-visible { outline: 2px solid var(--color-accent); outline-offset: -2px; }
+  .card-tag { display: inline-block; font: 600 10.5px ui-monospace, Menlo, monospace; padding: 3px 7px; background: var(--color-accent-100); color: var(--color-accent-700); margin-bottom: var(--space-3); }
+  .card-title { font: 600 17px/1.3 var(--font-heading); margin: 0 0 var(--space-1); }
+  .card-desc { font: 400 13px/1.5 var(--font-body); color: var(--color-neutral-700); margin: 0; }
+  footer { margin-top: var(--space-8); padding-top: var(--space-6); border-top: 2px solid var(--color-divider); font: 400 12px/1.6 var(--font-body); color: var(--color-neutral-600); }
+  footer a { color: var(--color-accent-700); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">RVI Centre</p>
+    <h1>Website design</h1>
+    <p class="lede">A template family — a unique Home page plus a shared section-landing / detail template pair — built on the Modernist design system, in desktop and mobile.</p>
+  </header>
+
+  <nav class="grid">
+    <a class="card" href="Home.dc.html">
+      <span class="card-tag">HOME</span>
+      <p class="card-title">Home</p>
+      <p class="card-desc">The unique home page.</p>
+    </a>
+    <a class="card" href="Publications.dc.html">
+      <span class="card-tag">TEMPLATE</span>
+      <p class="card-title">Publications</p>
+      <p class="card-desc">Shared section-landing template.</p>
+    </a>
+    <a class="card" href="Publication%20Detail.dc.html">
+      <span class="card-tag">TEMPLATE</span>
+      <p class="card-title">Publication Detail</p>
+      <p class="card-desc">Shared detail template.</p>
+    </a>
+    <a class="card" href="RVI%20Centre%20Design%20Preview.html">
+      <span class="card-tag">PREVIEW</span>
+      <p class="card-title">Full design preview</p>
+      <p class="card-desc">Standalone, self-contained build of every screen.</p>
+    </a>
+    <a class="card" href="RVI%20Website.dc.html">
+      <span class="card-tag">CANVAS</span>
+      <p class="card-title">Canvas overview</p>
+      <p class="card-desc">The design canvas index.</p>
+    </a>
+    <a class="card" href="RVI%20Website-print.dc.html">
+      <span class="card-tag">PRINT</span>
+      <p class="card-title">Print layout</p>
+      <p class="card-desc">Print-friendly version of the canvas.</p>
+    </a>
+  </nav>
+
+  <footer>
+    Source on <a href="https://github.com/breathgfx/rvi">GitHub</a>.
+  </footer>
+</div>
+</body>
+</html>
