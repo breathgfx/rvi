@@ -38,8 +38,8 @@
 .rvi h1,.rvi h2,.rvi h3,.rvi h4,.rvi h5{font-family:var(--font-h);font-weight:600;line-height:1.15;letter-spacing:-0.01em;margin:0}
 .rvi p{margin:0}
 .rvi img{display:block;max-width:100%}
-.rvi a{color:var(--teal-700);text-decoration:none;text-underline-offset:3px}
-.rvi a:hover{color:var(--ochre-700);text-decoration:underline}
+.rvi a:not(.btn){color:var(--teal-700);text-decoration:none;text-underline-offset:3px}
+.rvi a:not(.btn):hover{color:var(--ochre-700);text-decoration:underline}
 .rvi :focus{outline:none}
 .rvi :focus-visible{outline:3px solid var(--ochre-600);outline-offset:2px}
 .rvi ::selection{background:#cfe0df}
